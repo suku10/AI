@@ -1,0 +1,27 @@
+from gingerit.gingerit import GingerIt
+
+def font_style():
+    font=input("Enter the font style:capital letter/small letter/title/normal-")
+    for v in font:
+        if font=='capital letter':
+            print(corrected_text['result'].upper())
+            break
+        elif font=='small letter':
+            print(corrected_text['result'].lower())
+            break
+        elif font=='title':
+            print(corrected_text['result'].title())
+            break
+        else:
+            font=='normal'
+            print(corrected_text['result'])
+        break
+
+text=input("Enter Text-")
+corrected_text=GingerIt().parse(text)
+print(font_style())
+
+import re
+doc=corrected_text['result']
+new_doc=re.sub(" +"," ",doc)
+print("Text with correct gap between them-",new_doc)
